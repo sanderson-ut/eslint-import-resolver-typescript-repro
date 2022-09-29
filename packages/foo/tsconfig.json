@@ -20,9 +20,6 @@
     "paths": {
       "@foo/bar": [
         "../../node_modules/@foo/bar/dist/baz"
-      ],
-      "@foo/foo": [
-        "../../node_modules/@foo/foo/dist"
       ]
     },
     "lib": [
