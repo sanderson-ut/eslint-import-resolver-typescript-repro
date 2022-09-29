@@ -4,8 +4,21 @@ This repo is intended to demonstrate [Issue 188 in eslint-import-resolver-typesc
 
 Applying the code in [PR #187](https://github.com/import-js/eslint-import-resolver-typescript/pull/187) appears to resolve the issue.
 
+## Description
+
+This approximates my organisation's frontend monorepo.
+
+`@foo/bar` is a library with a single project, `baz`.
+
+`@foo/foo` is an app that depends on `@foo/bar`, and has an alias in `tsconfig.json` from `@foo/bar` to `../../node_modules/@foo/bar/dist/baz`.
+
+`@foo/foo` has ESLint enabled, and has `import/no-unresolved` set to error.
+
+Example projects were created using `ng-cli`.
+
 ## Instructions
 
+* install yarn 1.22.19
 * run `yarn install`
 * run `yarn run build-and-lint` to build `packages/bar` then `packages/foo`, and run ESlint in `packages/foo`
   * see linting error: ```4:28  error  Unable to resolve path to module '@foo/bar'  import/no-unresolved```
