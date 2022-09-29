@@ -1,4 +1,9 @@
 {
   "private": true,
-  "workspaces": ["packages/*"]
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "yarn workspace @foo/bar run build && yarn workspace @foo/foo run build",
+    "lint": "yarn workspace @foo/foo run lint",
+    "build-and-lint": "yarn run build && yarn run lint"
+  }
 }
