@@ -1,0 +1,42 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "cli": {
+    "packageManager": "yarn"
+  },
+  "newProjectRoot": "projects",
+  "projects": {
+    "baz": {
+      "projectType": "library",
+      "root": "projects/baz",
+      "sourceRoot": "projects/baz/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/baz/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/baz/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/baz/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/baz/src/test.ts",
+            "tsConfig": "projects/baz/tsconfig.spec.json",
+            "karmaConfig": "projects/baz/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "baz"
+}
