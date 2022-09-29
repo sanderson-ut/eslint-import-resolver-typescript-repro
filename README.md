@@ -14,7 +14,7 @@ This approximates my organisation's frontend monorepo.
 
 `@foo/foo` has ESLint enabled, and has `import/no-unresolved` set to error.
 
-Example projects were created using `ng-cli`.
+Example projects were created using `ng-cli`. ESLint was added using `ng add @angular-eslint/schematics`.
 
 ## Instructions
 
